@@ -2,7 +2,15 @@ import sys
 
 def main():
     """Runs the main program loop."""
-    print("Hello! Please enter a number and I will double it.")
+    
+    if len(sys.argv) != 2:
+        print("Error: required argument <number> not specified")
+        return
+    
+    if not sys.argv[1].isdigit():
+        first_arg = sys.argv[1]
+        print (f"Error: specified argument '{first_arg}' is not a number")
+        return 1
     value = int(sys.argv[1])
     double = value * 2 # Multiply value by 2
     
