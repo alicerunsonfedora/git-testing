@@ -12,10 +12,17 @@ repositories {
     mavenCentral()
 }
 
-
+dependencies {
+    implementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation(kotlin("test"))
+}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 application {

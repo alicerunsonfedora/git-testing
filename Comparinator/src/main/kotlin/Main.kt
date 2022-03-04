@@ -9,9 +9,13 @@ import kotlin.system.exitProcess
 
 /** Executes the main program. */
 fun main(args: Array<String>) {
+    exitProcess(mainWithReturn(args))
+}
+
+fun mainWithReturn(args: Array<String>): Int {
     val argsCode: Int = args.check()
     if (argsCode > 0)
-        exitProcess(argsCode)
+        return argsCode
 
     val numbers: List<Int> = args.first().parseInput()
 
@@ -22,7 +26,7 @@ fun main(args: Array<String>) {
             See the example below for a valid list.
             Example: 22,22,23,1,45,45,44,0
         """.trimIndent())
-        exitProcess(formatCheck)
+        return formatCheck
     }
 
     val (correctVerified, incorrectVerified) = comparinator(numbers)
@@ -30,6 +34,5 @@ fun main(args: Array<String>) {
         Number of correctly verified pairs:	    $correctVerified
         Number of incorrectly verified pairs:	$incorrectVerified
     """.trimIndent())
-    println("")
-    println("")
+    return 0
 }
