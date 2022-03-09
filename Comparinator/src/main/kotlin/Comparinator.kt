@@ -25,11 +25,13 @@
  */
 fun comparinator(numbers: List<Int>): Pair<Int, Int> {
 
+    var xtest: Pair<Int, Int> = Pair(0, 0)
+
     // Run the algorithm for each appropriate chunk. Using the windowed function from the Kotlin standard library makes
     // this easy and abstracts away creating a sliding window.
     numbers.windowed(4, step = 4) { chunk ->
 
     }
 
-    return Pair(0, 0)
+    return xtest
 }
